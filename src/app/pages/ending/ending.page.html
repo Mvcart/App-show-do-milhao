@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-center">
+  <div class="message-container">
+    <p>{{ message }}</p>
+    <h2>Você ganhou <span class="prize">{{ prizeWon }}</span> reais</h2>
+  </div>
+
+  <div class="button-group">
+    <ion-button expand="block" color="success" (click)="iniciarNovoJogo()">
+      Iniciar novo jogo
+    </ion-button>
+    <ion-button expand="block" color="primary" (click)="irParaMenu()">
+      Ir para o Menu
+    </ion-button>
+  </div>
+</ion-content>

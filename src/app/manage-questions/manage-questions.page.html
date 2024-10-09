@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gerenciar Perguntas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="addQuestion()">
+    <ion-item>
+      <ion-label position="floating">Título da Pergunta</ion-label>
+      <ion-input [(ngModel)]="question.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Resposta Correta</ion-label>
+      <ion-input [(ngModel)]="question.correctAnswer" name="correctAnswer"></ion-input>
+    </ion-item>
+    <ion-item *ngFor="let answer of question.answers; let i = index">
+      <ion-label position="floating">Resposta {{i + 1}}</ion-label>
+      <ion-input [(ngModel)]="question.answers[i]" name="answer{{i}}"></ion-input>
+    </ion-item>
+    <ion-button type="submit">Salvar Pergunta</ion-button>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let question of questions">
+      <ion-label>{{ question.title }}</ion-label>
+      <ion-button (click)="editQuestion(question.id)">Editar</ion-button>
+      <ion-button color="danger" (click)="deleteQuestion(question.id)">Deletar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

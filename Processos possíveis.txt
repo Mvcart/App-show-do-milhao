@@ -1,0 +1,30 @@
+Processos possíveis:
+
+GameDevice:
+
+Pede senha para entrar
+Dentro dele temos duas opções:
+
+jogar:
+	
+seção do site que o jogo roda e as informações são coletadas e mandadas para o banco de dados em tempo real. No começo do jogo é definido o prêmio máximo da rodada, o gênero das perguntas, a dificuldade da rodada e o nome do jogador. No início do jogo é guardado um pdf com o gabarito e as perguntas que vão ser feitas. Após o fim do jogo são guardadas estritamente essas informações:
+
+- código das perguntas (as perguntas terão um número atribuido a cada uma pra facilitar a organização)
+- acertos
+- quanto ganhou
+- quanto valia
+- nome do jogador
+
+perguntas:
+
+seção em que as perguntas são editadas/definidas. As perguntas têm um gênero/tipo e uma dificuldade, que é definido para cada uma. Essa página tem um painel para esse fim. O código da pergunta é automático. Nessa mesma página é possível exportar todas as informações de jogos anteriores.
+
+CameraDevice:
+
+Pede senha pra entrar
+Precisa estar em um dispositivo com acesso a uma câmera para gravar o jogador. Possui um botão para iniciar o stream para o DataCollector, e no fim da stream ele salva a gravação em mp4 ou WAV.
+
+DataCollector:
+
+Não pede senha pra entrar (difícil de implementar senha na TV)
+Recebe as informações do CameraDevice e do GameDevice e junta elas em um visualizador que possui a câmera, a pergunta atual e suas devidas informações. Apenas mostra as informações guardadas no banco de dados, não altera nada de fato.

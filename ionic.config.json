@@ -1,0 +1,8 @@
+{
+  "name": "show-do-milhao",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
+ 
